@@ -17,14 +17,13 @@ namespace Simulator.Sensors
         public LayerMask RadarBlockers;
 
         private List<RadarMesh> radars = new List<RadarMesh>();
-        // private WireframeBoxes WireframeBoxes;
+
 
         private uint seqId;
         private float nextPublish;
         
         private Dictionary<Collider, DetectedRadarObject> Detected = new Dictionary<Collider, DetectedRadarObject>();
-        private Dictionary<Collider, Box> Visualized = new Dictionary<Collider, Box>();
-        
+
         
         struct Box
         {
@@ -43,10 +42,8 @@ namespace Simulator.Sensors
 
         private void Start()
         {
-        	Debug.Log("111111111111111111111");
             foreach (var radar in radars)
             {
-            	Debug.Log("222222222222222");
                 radar.SetCallbacks(WhileInRange, OnExitRange);
             }
             nextPublish = Time.time + 1.0f / Frequency;
@@ -59,7 +56,7 @@ namespace Simulator.Sensors
             {
                 return;
             }
-            Debug.Log("3333333333333");
+
             nextPublish = Time.time + 1.0f / Frequency;
             
 			// publish ros data
@@ -67,16 +64,12 @@ namespace Simulator.Sensors
 			{
 				Debug.Log("The dictionary is empty");
 			}
-			KeyValuePair<Collider, DetectedRadarObject> firstElement = Detected.First();
-
-			Debug.Log("Value: " + firstElement.Value.Position);
-			// Debug.Log("456");
-			
+			Debug.Log("velocity of the test object is: " + Detected.First().Value.RelativeVelocity);	
         }
 
         void WhileInRange(Collider other, RadarMesh radar)
         {
-        	Debug.Log("666666666666666666");
+
             // if (other.isTrigger)
                 // return;
 
@@ -87,8 +80,6 @@ namespace Simulator.Sensors
             {
                 if (Detected.ContainsKey(other))
                     Detected.Remove(other);
-                if (Visualized.ContainsKey(other))
-                    Visualized.Remove(other);
                 return;
             }
 
@@ -142,9 +133,6 @@ namespace Simulator.Sensors
         {
             if (Detected.ContainsKey(other))
                 Detected.Remove(other);
-
-            if (Visualized.ContainsKey(other))
-                Visualized.Remove(other);
         }
 
         private bool CheckBlocked(Collider col)
@@ -213,9 +201,6 @@ namespace Simulator.Sensors
         private Vector3 GetObjectVelocity(Collider col)
         {
             Vector3 velocity = Vector3.zero;
-            // var npc = col.GetComponent<NPCController>();
-            // if (npc != null)
-                // velocity = npc.simpleVelocity;
             var ped = col.GetComponent<NavMeshAgent>();
             if (ped != null)
                 velocity = ped.desiredVelocity;
@@ -228,8 +213,6 @@ namespace Simulator.Sensors
         private int GetAgentState(Collider col)
         {
             int state = 1;
-            // if (col.GetComponent<NPCController>()?.currentSpeed > 1f)
-                // state = 0;
             return state;
         }
         
@@ -238,7 +221,7 @@ namespace Simulator.Sensors
 
             foreach (var radar in radars)
             {
-                Graphics.DrawMesh(radar.GetComponent<MeshFilter>().sharedMesh, transform.localToWorldMatrix, radar.RadarMeshRenderer.sharedMaterial, LayerMask.NameToLayer("Sensor"));
+            	Graphics.DrawMesh(radar.GetComponent<MeshFilter>().sharedMesh, transform.localToWorldMatrix, radar.RadarMeshRenderer.sharedMaterial, LayerMask.NameToLayer("Sensor"));
             }
         }
 

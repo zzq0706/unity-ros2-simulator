@@ -36,7 +36,6 @@ public class RadarMesh : MonoBehaviour
 
     public void SetCallbacks(Action<Collider, RadarMesh> stay, Action<Collider, RadarMesh> exit)
     {
-    	Debug.Log("444444444444444444");
         triggerStay = stay;
         triggerExit = exit;
         mask = LayerMask.GetMask("Obstacle");
@@ -44,23 +43,19 @@ public class RadarMesh : MonoBehaviour
     
     void OnTriggerStay(Collider other)
     {
-    	Debug.Log("trigger called");
         if (triggerStay == null || ((mask.value >> other.gameObject.layer) & 1) == 0)
         {
             return;
         }
-        
         triggerStay(other, this);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("trigger called");
         if (triggerExit == null || ((mask.value >> other.gameObject.layer) & 1) == 0)
         {
             return;
         }
-        
         triggerExit(other, this);
     }
     
@@ -215,7 +210,6 @@ public class Triangulator
             Vector2 qval = m_points[q];
             A += pval.x * qval.y - qval.x * pval.y;
         }
-        Debug.Log("A is, " + A);
         return (A * 0.5f);
     }
 
