@@ -1,8 +1,9 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/26988372/133429919-b7c8d779-7036-488e-8b17-1340bd41ea3d.png" />
-</p>
-
 ## Description
+The simulation is based on the Open Construction Simulator (OCS).  
+
+The repo link:  
+https://github.com/Field-Robotics-Japan/OpenConstructionSimulator 
+
 Open Construction Simulator (OCS) is a free construction simulator.  
 It is developed based on the game engine "Unity" and provides a simulation environment for excavation and earth transportation using heavy machinery.
 
@@ -20,39 +21,55 @@ Please check them if you have more interests.
 - [OcsTerrain](https://github.com/qoopen0815/OcsTerrain) : Terrain control package
 - [OcsVehicle](https://github.com/qoopen0815/OcsVehicle) : Vehicle control package
 
+## Environment
+### Unity Version
+2020.2 or later
+
+### Depend Packages
+Burst : >=1.4.8  
+Mathematics : >=1.2.1  
+ROS TCP Connector : >=v0.5.0  
+UnitySensors : >=0.1.0
+
 ## Installation
-### 1．Installation of unity(2020.3.6f1)
-First, install UnityHub with following links.
-- Windows, Mac : https://unity3d.com/jp/get-unity/download
-- Linux : Goto https://unity3d.com/get-unity/download and click "Download Unity Hub" button to get latest `UnityHub.AppImage`.  
-  Then add execution permission for `UnityHub.AppImage` by following command.
-  ```bash
-  $ sudo chmod +x UnityHub.AppImage
-  ```
-  Then, run the UnityHub.AppImage
-   ```bash
-   $ ./UnityHub.AppImage
-   ```
-   Please certificate the LICENSE for Unity on UnityHub application (you can use them free !)
+Open the package manager from `Window -> Package Manager` and select "Add package from git URL..."
+Enter the following each URLs, respectively.  
 
-After that, choose and install Unity Editor (version : `2020.3.6f1`) from archive.  
-https://unity3d.com/get-unity/download/archive
+For ROS connection:  
+https://github.com/Unity-Technologies/ROS-TCP-Connector.git?path=/com.unity.robotics.ros-tcp-connector
 
-**For Windows**  
-You have `.exe` file from above link. Just run them.
+For urdf importer:  
+https://github.com/Unity-Technologies/URDF-Importer.git?path=/com.unity.robotics.urdf-importer  
 
-**For Linux**  
-1. Right click on `Unity Hub` button on your desired Unity Editor version, and click "Copy Lilnk Location".
-2. Run `UnityHub.AppImage` by setting copied link location as the argument. Here is the example for `2020.3.6f1` version.
-   ```bash
-   $ ./UnityHub.AppImage unityhub://2020.3.6f1/338bb68529b2
-   ```
-   If you need any other version, the procedure is same.
-   After above commands, the UnityHub will start to install desird version's Unity Editor!
+For sensors used in the simulation:  
+https://github.com/Field-Robotics-Japan/UnitySensors.git  
+https://github.com/Field-Robotics-Japan/UnitySensorsROS.git#v0.1.0
 
-### 4.Open project
+Click Install buton on the right bottom corner for each depend packages, respectively.
+
+## Other Requirements
+The GPS sensor depends on nmea_msgs, if not installed beforehand, please install this:  
+
+`$ sudo apt-get install ros-<ros-distro>-nmea-msgs`
+
+## Quick Start
+
+### 1. Open project
 Finally, please open `OpenConstructionSimulator` package from UnityHub. (It takes more than 5 minuites at the first time, in the case)
 
-### 5. Select the Scene file
-There are Demo Scene file in `Asset/OpenConstructionSim/Scenes/DemoEnv.unity`.  
-Please open the Scene file you want.
+### 2. Select the Scene file
+There are pre-built Scene file in `Asset/OpenConstructionSim/Scenes/NewEnv.unity`.  
+
+
+### 3. Connect with ROS
+please refer to the Unity-Robotics-Hub for ROS connection:
+https://github.com/Unity-Technologies/Unity-Robotics-Hub
+
+
+
+
+
+
+
+
+

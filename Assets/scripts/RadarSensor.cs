@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,22 +8,36 @@ using Simulator.Bridge.Data;
 using UnityEngine;
 using UnityEngine.AI;
 // using Simulator.Sensors.UI;
+using Unity.Robotics.ROSTCPConnector;
+using DetectedRadarObjectMsg = RosMessageTypes.Dumper.DetectedRadarObjectMsg;
+using DetectedRadarObjectArrayMsg = RosMessageTypes.Dumper.DetectedRadarObjectArrayMsg;
+using RosMessageTypes.Geometry;
+
+
 
 namespace Simulator.Sensors
 {
     public class RadarSensor : MonoBehaviour
     {
         [Range(1.0f, 100f)]
-        public float Frequency = 13.4f;
+        public float Frequency = 10f; //13.4f
         public LayerMask RadarBlockers;
 
         private List<RadarMesh> radars = new List<RadarMesh>();
 
 
-        private uint seqId;
+        private uint seqId = 0;
         private float nextPublish;
         
         private Dictionary<Collider, DetectedRadarObject> Detected = new Dictionary<Collider, DetectedRadarObject>();
+        
+        // ros thing
+        private ROSConnection _ros;
+    	private DetectedRadarObjectArrayMsg _message;
+    	[SerializeField] private string _topicName = "radar_scan";
+    	[SerializeField] private string _frameId   = "Radars";
+    	
+    	private float _timeStamp   = 0f;
 
         
         struct Box
@@ -42,6 +57,12 @@ namespace Simulator.Sensors
 
         private void Start()
         {
+        	// init ros thing
+            this._ros = ROSConnection.instance;
+        	this._ros.RegisterPublisher<DetectedRadarObjectArrayMsg>(this._topicName);
+
+       
+        	
             foreach (var radar in radars)
             {
                 radar.SetCallbacks(WhileInRange, OnExitRange);
@@ -62,9 +83,14 @@ namespace Simulator.Sensors
 			// publish ros data
 			if (Detected.Count == 0)
 			{
-				Debug.Log("The dictionary is empty");
+				Debug.Log("nothing detected");
 			}
-			Debug.Log("velocity of the test object is: " + Detected.First().Value.RelativeVelocity);	
+			// Debug.Log("velocity of the test object is: " + Detected.First().Value.RelativeVelocity);
+			this._message = ROS2ConvertFrom(Detected.Values.ToArray());
+			this._ros.Send(this._topicName, this._message);
+			
+			// update time
+			this._timeStamp = Time.time;
         }
 
         void WhileInRange(Collider other, RadarMesh radar)
@@ -223,6 +249,54 @@ namespace Simulator.Sensors
             {
             	Graphics.DrawMesh(radar.GetComponent<MeshFilter>().sharedMesh, transform.localToWorldMatrix, radar.RadarMeshRenderer.sharedMaterial, LayerMask.NameToLayer("Sensor"));
             }
+        }
+        
+        // ros msgs converter
+        public Vector3Msg ConvertToRosVector3(UnityEngine.Vector3 v)
+        {
+            return new Vector3Msg() { x = v.z, y = -v.x, z = v.y };
+        }
+
+        public PointMsg ConvertToRosPoint(UnityEngine.Vector3 v)
+        {
+            return new PointMsg() { x = v.z, y = -v.x, z = v.y };
+        }
+        
+        public DetectedRadarObjectArrayMsg ROS2ConvertFrom(DetectedRadarObject[] data)
+        {
+            var r = new DetectedRadarObjectArrayMsg();
+  			r.header.frame_id = this._frameId;
+# if ROS2
+            int sec = (int)Math.Truncate(this._timeStamp);
+# else
+            // uint sec = (uint)Math.Truncate(this._timeStamp);
+# endif
+            uint nanosec = (uint)( (this._timeStamp - sec)*1e+9 );
+            r.header.stamp.sec = sec;
+            r.header.stamp.nanosec = nanosec;
+
+			List<DetectedRadarObjectMsg> detectedObjects = new List<DetectedRadarObjectMsg>();
+            foreach (var obj in data)
+            {
+                detectedObjects.Add(new DetectedRadarObjectMsg()
+                {
+                    sensor_aim = ConvertToRosVector3(obj.SensorAim),
+                    sensor_right = ConvertToRosVector3(obj.SensorRight),
+                    sensor_position = ConvertToRosPoint(obj.SensorPosition),
+                    sensor_velocity = ConvertToRosVector3(obj.SensorVelocity),
+                    sensor_angle = obj.SensorAngle,
+                    object_position = ConvertToRosPoint(obj.Position),
+                    object_velocity = ConvertToRosVector3(obj.Velocity),
+                    object_relative_position = ConvertToRosPoint(obj.RelativePosition),
+                    object_relative_velocity = ConvertToRosVector3(obj.RelativeVelocity),
+                    object_collider_size = ConvertToRosVector3(obj.ColliderSize),
+                    object_state = (byte)obj.State,
+                    new_detection = obj.NewDetection,
+                });
+            }
+            r.objects = detectedObjects.ToArray();
+
+            return r;
         }
 
     }
