@@ -85,7 +85,7 @@ namespace Simulator.Sensors
 			{
 				Debug.Log("nothing detected");
 			}
-			// Debug.Log("velocity of the test object is: " + Detected.First().Value.RelativeVelocity);
+			Debug.Log("velocity of the test object is: " + Detected.First().Value.RelativeVelocity);
 			this._message = ROS2ConvertFrom(Detected.Values.ToArray());
 			this._ros.Send(this._topicName, this._message);
 			
