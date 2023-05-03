@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: f354dca2bca146642a157b10aa4611b0
+timeCreated: 1510074256
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: det_K_1
+    100002: det_K_10
+    100004: det_K_11
+    100006: det_K_12
+    100008: det_K_13
+    100010: det_K_14
+    100012: det_K_15
+    100014: det_K_16
+    100016: det_K_17
+    100018: det_K_18
+    100020: det_K_19
+    100022: det_K_2
+    100024: det_K_20
+    100026: det_K_21
+    100028: det_K_22
+    100030: det_K_23
+    100032: det_K_24
+    100034: det_K_27
+    100036: det_K_3
+    100038: det_K_4
+    100040: det_K_5
+    100042: det_K_6
+    100044: det_K_7
+    100046: det_K_8
+    100048: det_K_9
+    100050: Line001
+    100052: Object029
+    100054: //RootNode
+    100056: det_K_29
+    400000: det_K_1
+    400002: det_K_10
+    400004: det_K_11
+    400006: det_K_12
+    400008: det_K_13
+    400010: det_K_14
+    400012: det_K_15
+    400014: det_K_16
+    400016: det_K_17
+    400018: det_K_18
+    400020: det_K_19
+    400022: det_K_2
+    400024: det_K_20
+    400026: det_K_21
+    400028: det_K_22
+    400030: det_K_23
+    400032: det_K_24
+    400034: det_K_27
+    400036: det_K_3
+    400038: det_K_4
+    400040: det_K_5
+    400042: det_K_6
+    400044: det_K_7
+    400046: det_K_8
+    400048: det_K_9
+    400050: Line001
+    400052: Object029
+    400054: //RootNode
+    400056: det_K_29
+    2300000: det_K_1
+    2300002: det_K_10
+    2300004: det_K_11
+    2300006: det_K_12
+    2300008: det_K_13
+    2300010: det_K_14
+    2300012: det_K_15
+    2300014: det_K_16
+    2300016: det_K_17
+    2300018: det_K_18
+    2300020: det_K_19
+    2300022: det_K_2
+    2300024: det_K_20
+    2300026: det_K_21
+    2300028: det_K_22
+    2300030: det_K_23
+    2300032: det_K_24
+    2300034: det_K_27
+    2300036: det_K_3
+    2300038: det_K_4
+    2300040: det_K_5
+    2300042: det_K_6
+    2300044: det_K_7
+    2300046: det_K_8
+    2300048: det_K_9
+    2300050: Object029
+    2300052: det_K_29
+    3300000: det_K_1
+    3300002: det_K_10
+    3300004: det_K_11
+    3300006: det_K_12
+    3300008: det_K_13
+    3300010: det_K_14
+    3300012: det_K_15
+    3300014: det_K_16
+    3300016: det_K_17
+    3300018: det_K_18
+    3300020: det_K_19
+    3300022: det_K_2
+    3300024: det_K_20
+    3300026: det_K_21
+    3300028: det_K_22
+    3300030: det_K_23
+    3300032: det_K_24
+    3300034: det_K_27
+    3300036: det_K_3
+    3300038: det_K_4
+    3300040: det_K_5
+    3300042: det_K_6
+    3300044: det_K_7
+    3300046: det_K_8
+    3300048: det_K_9
+    3300050: Object029
+    3300052: det_K_29
+    4300000: det_K_3
+    4300002: det_K_19
+    4300004: det_K_14
+    4300006: det_K_10
+    4300008: det_K_13
+    4300010: det_K_16
+    4300012: det_K_15
+    4300014: det_K_18
+    4300016: det_K_21
+    4300018: det_K_17
+    4300020: det_K_12
+    4300022: det_K_11
+    4300024: det_K_9
+    4300026: det_K_8
+    4300028: det_K_6
+    4300030: det_K_7
+    4300032: det_K_4
+    4300034: Object029
+    4300036: det_K_23
+    4300038: det_K_22
+    4300040: det_K_5
+    4300042: det_K_24
+    4300044: det_K_1
+    4300046: det_K_2
+    4300048: det_K_20
+    4300050: det_K_27
+    4300052: det_K_29
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
