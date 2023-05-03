@@ -1,25 +1,16 @@
 ## Description
-The simulation is based on the Open Construction Simulator (OCS).  
+The simulation is based on the Open Construction Simulator (OCS). Open Construction Simulator (OCS) is a free construction simulator.  
+It is developed based on the game engine "Unity" and provides a simulation environment for excavation and earth transportation using heavy machinery.  
 
-The repo link:  
+The link to the repo:  
 https://github.com/Field-Robotics-Japan/OpenConstructionSimulator 
 
-Open Construction Simulator (OCS) is a free construction simulator.  
-It is developed based on the game engine "Unity" and provides a simulation environment for excavation and earth transportation using heavy machinery.
+The implementations of the ROS2 sensors in unity in this repository are based on the following repositories:  
+https://github.com/Field-Robotics-Japan/OpenConstructionSimulator  
+https://github.com/Unity-Technologies/Robotics-Nav2-SLAM-Example  
+https://github.com/lgsvl/simulator/tree/release-2020.05  
+Please check them if you have more interests.  
 
-**note**  
-The version maintained in this repository is a **Demo** version.  
-[The Full version](https://github.com/qoopen0815/OpenConstructionSimulator/releases) is distributed only as a binary due to license restrictions.
-
-![222_Trim](https://user-images.githubusercontent.com/26988372/133398942-6b8ef0e1-ac1b-4119-a4f6-ea16bbeaaa40.gif)
-
-In this repository, following packages are utilized.
-Please check them if you have more interests.
-
-- [UnitySensors](https://github.com/Field-Robotics-Japan/UnitySensors) : Sensor packages available for Unity
-- [OcsSystem](https://github.com/qoopen0815/OcsSystem) : System management package
-- [OcsTerrain](https://github.com/qoopen0815/OcsTerrain) : Terrain control package
-- [OcsVehicle](https://github.com/qoopen0815/OcsVehicle) : Vehicle control package
 
 ## Environment
 ### Unity Version
@@ -48,17 +39,17 @@ https://github.com/Field-Robotics-Japan/UnitySensorsROS.git#v0.1.0
 Click Install buton on the right bottom corner for each depend packages, respectively.
 
 ## Other Requirements
-The GPS sensor depends on nmea_msgs, if not installed beforehand, please install this:  
+(optional)The GPS sensor depends on nmea_msgs, if you want to use GPS sensor and it is not installed beforehand, please install this:  
 
 `$ sudo apt-get install ros-<ros-distro>-nmea-msgs`
 
 ## Quick Start
 
 ### 1. Open project
-Finally, please open `OpenConstructionSimulator` package from UnityHub. (It takes more than 5 minuites at the first time, in the case)
+Finally, please open `OpenConstructionSimulator` package from UnityHub. (It takes more than 5 minuites at the first time, in the case).
 
 ### 2. Select the Scene file
-There are pre-built Scene file in `Asset/OpenConstructionSim/Scenes/NewEnv.unity`.  
+There are pre-built Scene file in `Asset/OpenConstructionSim/Scenes/AdaptedDumperEnv.unity`. Check the sensor scripts and the controller scripts under 'dumper' object if you have more interests to adapt the scripts to new models.
 
 
 ### 3. Connect with ROS
