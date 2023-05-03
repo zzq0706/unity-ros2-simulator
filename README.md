@@ -1,5 +1,5 @@
 ## Description
-The simulation is based on the Open Construction Simulator (OCS). Open Construction Simulator (OCS) is a free construction simulator.  
+The simulation is based on the Open Construction Simulator (OCS). Open Construction Simulator (OCS) is a free construction simulator.
 It is developed based on the game engine "Unity" and provides a simulation environment for excavation and earth transportation using heavy machinery.  
 
 The link to the repo:  
