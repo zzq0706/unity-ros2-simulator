@@ -5937,8 +5937,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 289612749379868061}
-  - component: {fileID: 8160539002316404334}
-  - component: {fileID: 3053690209302242065}
+  - component: {fileID: 289612749379868063}
+  - component: {fileID: 289612749379868062}
   m_Layer: 7
   m_Name: dumper
   m_TagString: Untagged
@@ -5963,6 +5963,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &289612749379868062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289612749379868060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b183b22648d2d20c85e0f26d5a181e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vehicle: {fileID: 289612749379868063}
+  leftCrawler_topic: dumper/leftCrawler
+  rightCrawler_topic: dumper/rightCrawler
+  _debug_forceManualMode: 0
+--- !u!114 &289612749379868063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289612749379868060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f536827316ee34cb1a39925db11580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _MainCamera: {fileID: 5885550533988796451}
+  _upperCamera: {fileID: 1167108757058999776}
+  _leftCrawler: {fileID: 251179787}
+  _rightCrawler: {fileID: 468454730}
 --- !u!23 &289612749406558776
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6712,26 +6744,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5889593372235224860, guid: b38dc5984418f0b44bc691c4283884b5, type: 3}
---- !u!114 &3053690209302242065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289612749379868060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c253d5579a94cc4899e0492ea7707cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _vehicle: {fileID: 8160539002316404334}
-  leftCrawler_topic: backHoe/leftCrawler
-  rightCrawler_topic: backHoe/rightCrawler
-  base_topic: backHoe/wheel
-  boom_topic: backHoe/boom
-  arm_topic: backHoe/arm
-  end_topic: backHoe/end
-  _debug_forceManualMode: 0
 --- !u!1001 &3244368616704906714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7386,39 +7398,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4343428707626476441, guid: b38dc5984418f0b44bc691c4283884b5, type: 3}
---- !u!114 &8160539002316404334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289612749379868060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 909a99dec8e2f8960ba6fb7ff6d76919, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _MainCamera: {fileID: 5885550533988796451}
-  _upperCamera: {fileID: 1167108757058999776}
-  _leftCrawler: {fileID: 251179787}
-  _rightCrawler: {fileID: 468454730}
-  _lights:
-  - light: {fileID: 428693741}
-  _headLightIntensity: 3
-  _winkers: []
-  _winkerFrequency: 5
-  _winkerIntensity: 3
-  _hone:
-    source: {fileID: 0}
-    volume: 1
-  _base: {fileID: 1639964143}
-  _boom: {fileID: 1272943706}
-  _arm: {fileID: 203187979}
-  _end: {fileID: 1318743902}
-  _controlSpeed_base: 40
-  _controlSpeed_boom: 15
-  _controlSpeed_arm: 15
-  _controlSpeed_end: 30
 --- !u!114 &8211750778203870523
 MonoBehaviour:
   m_ObjectHideFlags: 0
