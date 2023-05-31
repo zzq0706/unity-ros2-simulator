@@ -49,11 +49,15 @@ Click Install buton on the right bottom corner for each depend packages, respect
 Finally, please open `OpenConstructionSimulator` package from UnityHub. (It takes more than 5 minuites at the first time, in the case).
 
 ### 2. Select the Scene file
-There are pre-built Scene file in `Asset/OpenConstructionSim/Scenes/AdaptedDumperEnv.unity`. Check the sensor scripts and the controller scripts under 'dumper' object if you have more interests to adapt the scripts to new models.
+There are pre-built Scene file in `Asset/OpenConstructionSim/Scenes/AdaptedDumperEnv.unity`. Check the sensor scripts and the controller scripts under 'dumper' object if you have more interests to adapt the scripts to new models.  
+Tips for using radar sensor:  
+1. Add the objects in the scene, which you want to detect with radars, to a layer named "Obstacle" (or whatever you want, but one should also modify the script for other names).  
+2. Tick the box 'is Tirgger' of the collider for both radars and to be detected objects.
+
 
 
 ### 3. Connect with ROS
-please refer to the Unity-Robotics-Hub for ROS connection:
+Please refer to the Unity-Robotics-Hub for ROS connection:
 https://github.com/Unity-Technologies/Unity-Robotics-Hub
 
 
