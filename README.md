@@ -50,9 +50,10 @@ Finally, please open `OpenConstructionSimulator` package from UnityHub. (It take
 
 ### 2. Select the Scene file
 There are pre-built Scene file in `Asset/OpenConstructionSim/Scenes/AdaptedDumperEnv.unity`. Check the sensor scripts and the controller scripts under 'dumper' object if you have more interests to adapt the scripts to new models.  
+  
 Tips for using radar sensor:  
-1. Add the objects in the scene, which you want to detect with radars, to a layer named "Obstacle" (or whatever you want, but one should also modify the script for other names).  
-2. Tick the box 'is Tirgger' of the collider for both radars and to be detected objects.
+1. Add the objects in the scene, which you want to detect with radars, to a layer named "Obstacles" (or whatever you want, but one should also modify the script for other names).  
+2. Tick the box 'is Trigger' of the colliders for both radars and to be detected objects.
 
 
 
