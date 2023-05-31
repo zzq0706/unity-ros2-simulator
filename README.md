@@ -46,7 +46,7 @@ Click Install buton on the right bottom corner for each depend packages, respect
 ## Quick Start
 
 ### 1. Open project
-Finally, please open `OpenConstructionSimulator` package from UnityHub. (It takes more than 5 minuites at the first time, in the case).
+Please open `Simulator` package from UnityHub. (It takes more than 5 minuites at the first time, in the case).
 
 ### 2. Select the Scene file
 There are pre-built Scene file in `Asset/OpenConstructionSim/Scenes/AdaptedDumperEnv.unity`. Check the sensor scripts and the controller scripts under 'dumper' object if you have more interests to adapt the scripts to new models.  
