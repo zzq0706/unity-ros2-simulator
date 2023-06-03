@@ -6,7 +6,7 @@ The link to the repo:
 https://github.com/Field-Robotics-Japan/OpenConstructionSimulator 
 
 The implementations of the ROS2 sensors in unity in this repository are based on the following repositories:  
-https://github.com/Field-Robotics-Japan/OpenConstructionSimulator  
+https://github.com/Field-Robotics-Japan/UnitySensorsROSAssets  
 https://github.com/Unity-Technologies/Robotics-Nav2-SLAM-Example  
 https://github.com/lgsvl/simulator/tree/release-2020.05  
 Please check them if you have more interests.  
