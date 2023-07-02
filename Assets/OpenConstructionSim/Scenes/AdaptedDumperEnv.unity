@@ -779,7 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acef0b79454c9b4dae3f8139bc4ba77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RosIPAddress: 192.168.2.116
+  m_RosIPAddress: 192.168.2.122
   m_RosPort: 10000
   m_ConnectOnStart: 1
   m_KeepaliveTime: 1
@@ -2535,13 +2535,14 @@ GameObject:
   - component: {fileID: 938965631}
   - component: {fileID: 938965630}
   - component: {fileID: 938965634}
+  - component: {fileID: 938965635}
   m_Layer: 7
   m_Name: depth_camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &938965629
 Transform:
   m_ObjectHideFlags: 0
@@ -2550,7 +2551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938965628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 2, z: 0.75}
+  m_LocalPosition: {x: 0, y: 1.5, z: 1.25}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 289612749407025558}
@@ -2568,12 +2569,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484a240fea6b9ad1da8862833b7bf235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _width: 320
-  _height: 240
+  _width: 512
+  _height: 424
   _scanRate: 30
-  fieldOfView: 90
-  farClipPlane: 65.535
+  fieldOfView: 70
+  farClipPlane: 50
   pixels: 0
+  shader: {fileID: 4800000, guid: 027578df753d092e9930a83104efadc1, type: 3}
   _topicName: depth_image
   _frameId: depth_camera
 --- !u!65 &938965631
@@ -2647,11 +2649,11 @@ Camera:
   m_GameObject: {fileID: 938965628}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
@@ -2662,8 +2664,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  far clip plane: 16
+  field of view: 36.62363
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2681,6 +2683,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &938965635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938965628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba5fd74d37a6cf4284698624eb8f6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsBaseLink: 0
 --- !u!1 &972449015
 GameObject:
   m_ObjectHideFlags: 0
@@ -4143,7 +4158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1741896264
 Transform:
   m_ObjectHideFlags: 0
@@ -4232,7 +4247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f95471cc8e6980a9a459ce1422db54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topic: /scan
+  topic: /scan_lidar
   PublishPeriodSeconds: 0.05
   RangeMetersMin: 0.12
   RangeMetersMax: 50
@@ -4442,13 +4457,14 @@ GameObject:
   - component: {fileID: 1877157493}
   - component: {fileID: 1877157492}
   - component: {fileID: 1877157496}
+  - component: {fileID: 1877157491}
   m_Layer: 7
   m_Name: rgb_camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1877157490
 Transform:
   m_ObjectHideFlags: 0
@@ -4457,12 +4473,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877157489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 2, z: 0.5}
+  m_LocalPosition: {x: 0, y: 1.5, z: 1.25}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 289612749407025558}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1877157491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877157489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba5fd74d37a6cf4284698624eb8f6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsBaseLink: 0
 --- !u!20 &1877157492
 Camera:
   m_ObjectHideFlags: 0
@@ -4488,7 +4517,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -4582,9 +4611,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputImage: {fileID: 0}
   camera: {fileID: 0}
-  width: 320
-  height: 240
-  fieldOfView: 90
+  width: 512
+  height: 424
+  fieldOfView: 70
   farClipPlane: 65.535
   targetFrameRate: 10
   _topicName: rgb_image

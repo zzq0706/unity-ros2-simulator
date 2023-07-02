@@ -19,6 +19,27 @@ namespace Test.Sensor
     protected bool send_image = false;
     public int pixels;
     
+    const int type = 3;	
+	public Shader shader;
+	
+	private Material _material;
+	
+	
+	private Material material {
+	get {
+		if (_material == null) {
+			_material = new Material(shader);
+			_material.hideFlags = HideFlags.HideAndDontSave;
+		}
+		return _material;
+		}
+	}
+	
+	private void OnDisable() {
+	if (_material != null)
+		DestroyImmediate(_material);
+	}
+    
     public uint width  { get => (uint)this._width; }
     public uint height { get => (uint)this._height; }
     public float scanRate { get => this._scanRate; }
@@ -77,7 +98,7 @@ namespace Test.Sensor
     
     void OnRenderImage(RenderTexture src, RenderTexture dest) 
     {
-      Graphics.Blit(src, dest);
+      Graphics.Blit(src, dest, material);
       if (send_image) 
       {
           SendImage();
