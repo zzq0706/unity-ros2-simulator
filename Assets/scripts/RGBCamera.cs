@@ -53,7 +53,8 @@ namespace Test.Sensor
 
 			// setup ROS Message
 			this._message = new ImageMsg();
-			this._message.header.frame_id = this._frameId;
+			// this._message.header.frame_id = this._frameId;
+			this._message.header.frame_id = "rgb_camera_trans";
 			this._message.width = (uint)this.width;
 			this._message.height = (uint)this.height;
 			this._message.encoding = "rgb8";
