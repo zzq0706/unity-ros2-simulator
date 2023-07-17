@@ -2314,7 +2314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2028847206
 Transform:
   m_ObjectHideFlags: 0
@@ -2350,6 +2350,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 960159748172951535, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.65
+      objectReference: {fileID: 0}
     - target: {fileID: 960159748308535997, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2397,6 +2401,42 @@ PrefabInstance:
     - target: {fileID: 960159748308535998, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
       propertyPath: m_Name
       value: dumper
+      objectReference: {fileID: 0}
+    - target: {fileID: 960159749140760358, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
+      propertyPath: width
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 960159749140760358, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
+      propertyPath: height
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 960159749256068444, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
+      propertyPath: _width
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 960159749256068444, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
+      propertyPath: _height
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 960159749256068444, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
+      propertyPath: _scanRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 960159749403715457, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
+      propertyPath: topic
+      value: /lidar_scan
+      objectReference: {fileID: 0}
+    - target: {fileID: 960159749403715457, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
+      propertyPath: PublishPeriodSeconds
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 960159749403715458, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 960159749403715459, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06d88159b242402999ae4ca01beb37d0, type: 3}
