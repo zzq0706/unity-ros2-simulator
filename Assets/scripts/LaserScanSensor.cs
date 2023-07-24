@@ -96,7 +96,7 @@ public class LaserScanSensor : MonoBehaviour
             angle_increment = (angleEndRos - angleStartRos) / NumMeasurementsPerScan,
             time_increment = TimeBetweenMeasurementsSeconds,
             scan_time = (float)PublishPeriodSeconds,
-            intensities = new float[ranges.Count],
+            // intensities = new float[ranges.Count],
             ranges = ranges.ToArray(),
         };
         
