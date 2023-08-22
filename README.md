@@ -54,10 +54,6 @@ There are pre-built Scene file in `Asset/OpenConstructionSim/Scenes/AdaptedDumpe
 Tips for using radar sensor:  
 1. Add the objects in the scene, which you want to detect with radars, to a layer named "Obstacles" (or whatever you want, but one should also modify the script for other names).  
 2. Tick the box 'is Trigger' of the colliders for both radars and to be detected objects.
-<<<<<<< HEAD
-
-=======
->>>>>>> dev_vslam
 
 
 ### 3. Connect with ROS
