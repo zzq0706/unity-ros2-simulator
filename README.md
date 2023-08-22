@@ -56,10 +56,55 @@ Tips for using radar sensor:
 2. Tick the box 'is Trigger' of the colliders for both radars and to be detected objects.
 
 
-
 ### 3. Connect with ROS
 Please refer to the Unity-Robotics-Hub for ROS connection:
 https://github.com/Unity-Technologies/Unity-Robotics-Hub
+
+### 4. Start automation mode
+Tick the box `Option/Automation` in the playing UI after starting the simualtion.
+
+
+## Folder structure
+    ├── README.md                         // help documentation
+    
+    ├── Assets                            // all models and envroments in unity
+        
+        ├── OcsVehicle/Models             // store the vehicle models
+    
+            └── dumper.prefab             // the model we use
+        
+        ├── OcsVehicle/Scripts/Controller // store the controller scripts specially for the dumper
+    
+            └── DumperController.cs       // the default differential dumper controller we use
+    
+        └── OpenConstructionSim/Scenes    // store the simulation environment
+    
+            └── AdaptedDumperEnv.unity    // the simulation environment we use 
+    
+    ├── scripts                           // store all the controller and sensor scripts
+
+        ├── AGVController.cs              // alternative script for differntial controller, if you don't want to use the default one
+
+        ├── OmniController.cs             // omnidirectional controller script
+
+        ├── LaserScanSensor.cs            // 2D LIDAR script we use
+
+        ├── RGBCamera.cs                  // RGB camera script
+
+        ├── DepthCamera.cs                // depth camera script
+
+        ├── RadarMesh.cs                  // RADAR mesh script for generating radar mesh
+
+        ├── RadarSensor.cs                // RADAR sensor script
+
+        ├── Ultrasonic.cs                 // 3D ultrasonic sensor script
+
+        ├── SensorROS/IMU/IMUPublisher.cs  // IMU script
+    
+        └── SensorROS/GPS/GPSPublisher.cs  // GPS script
+
+    └── ...                                // check the rest files if you have more interests, 
+                                            if you just want to use the simulation, the rest could be ignored.
 
 
 
