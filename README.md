@@ -85,27 +85,27 @@ Tick the box `Option/Automation` in the playing UI after starting the simualtion
     
             └── AdaptedDumperEnv.unity    // the simulation environment we use 
     
-    ├── scripts                           // store all the controller and sensor scripts
+		├── scripts                           // store all the controller and sensor scripts
 
-        ├── AGVController.cs              // alternative script for differntial controller, if you don't want to use the default one
+			├── AGVController.cs              // alternative script for differntial controller, if you don't want to use the default one
 
-        ├── OmniController.cs             // omnidirectional controller script
+			├── OmniController.cs             // omnidirectional controller script
 
-        ├── LaserScanSensor.cs            // 2D LIDAR script we use
+			├── LaserScanSensor.cs            // 2D LIDAR script we use
 
-        ├── RGBCamera.cs                  // RGB camera script
+			├── RGBCamera.cs                  // RGB camera script
 
-        ├── DepthCamera.cs                // depth camera script
+			├── DepthCamera.cs                // depth camera script
 
-        ├── RadarMesh.cs                  // RADAR mesh script for generating radar mesh
+			├── RadarMesh.cs                  // RADAR mesh script for generating radar mesh
 
-        ├── RadarSensor.cs                // RADAR sensor script
+			├── RadarSensor.cs                // RADAR sensor script
 
-        ├── Ultrasonic.cs                 // 3D ultrasonic sensor script
+			├── Ultrasonic.cs                 // 3D ultrasonic sensor script
 
-        ├── SensorROS/IMU/IMUPublisher.cs  // IMU script
-    
-        └── SensorROS/GPS/GPSPublisher.cs  // GPS script
+			├── SensorROS/IMU/IMUPublisher.cs  // IMU script
+			
+			└── SensorROS/GPS/GPSPublisher.cs  // GPS script
 
     └── ...                                // check the rest files if you have more interests, 
                                             if you just want to use the simulation, the rest could be ignored.
